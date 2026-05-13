@@ -1,0 +1,259 @@
+/* ============================= */
+/* Global Reset & Box-sizing     */
+/* ============================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* prevent horizontal scroll */
+    font-family: 'Cabin', sans-serif;
+}
+
+/* ============================= */
+/* Contact Section Layout        */
+/* ============================= */
+.contact-page .contact-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    padding-top: calc(2rem + 80px); /* adjust for navbar height */
+    background: #f9f9f9;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.contact-page .contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ============================= */
+/* Contact Form Styling          */
+/* ============================= */
+.contact-page .contact-form h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    color: #D52927;
+    margin-top:30px;
+}
+
+.contact-page .form-group {
+    margin-bottom: 1rem;
+}
+
+.contact-page input,
+.contact-page textarea {
+    width: 100%;
+    padding: 0.9rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.contact-page textarea {
+    resize: none;
+}
+
+.contact-page .btn-submit {
+    display: inline-block;
+    padding: 0.9rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background: #222;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-page .btn-submit:hover {
+    background: #444;
+    transform: translateY(-2px);
+}
+
+.contact-page #formMessage {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+/* ============================= */
+/* Map + Info Cards Styling      */
+/* ============================= */
+.contact-page .map-container {
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-width: 100%;
+}
+
+.contact-page iframe,
+.contact-page img {
+    max-width: 100%;
+    display: block;
+}
+
+.contact-page .info-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+}
+
+.contact-page .info-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-page .info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.contact-page .info-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-page .info-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Info cards grid fix for 4 cards */
+.contact-page .info-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 100%;
+}
+
+.contact-page .info-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ============================= */
+/* Responsive Styles             */
+/* ============================= */
+
+/* Tablets ≤ 992px */
+@media (max-width: 992px) {
+    .contact-page .contact-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .contact-page .contact-form h2 {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+    .contact-page .contact-section {
+        padding-top: calc(2rem + 100px);
+        align-items: flex-start;
+    }
+
+    .contact-page .info-card:nth-child(3) {
+        grid-column: auto;
+    }
+}
+
+/* Mobile Landscape ≤ 768px */
+@media (max-width: 768px) {
+    .contact-page .contact-section {
+        padding: 1.5rem;
+    }
+
+    .contact-page .contact-form h2 {
+        font-size: 1.6rem;
+        padding-top: 40px;
+    }
+
+    .contact-page input,
+    .contact-page textarea {
+        font-size: 0.95rem;
+        padding: 0.8rem;
+    }
+
+    .contact-page .btn-submit {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 0.95rem;
+    }
+
+    .contact-page .info-card {
+        padding: 1.2rem;
+    }
+
+    /* Make all info cards full width on mobile */
+    .contact-page .info-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-page .info-card {
+        width: 100%;
+    }
+}
+
+/* Mobile Portrait ≤ 480px */
+@media (max-width: 480px) {
+    .contact-page .contact-section {
+        padding: 1rem;
+    }
+
+    .contact-page .contact-form h2 {
+        font-size: 1.5rem;
+        padding-top: 30px;
+        margin-bottom: 1rem;
+    }
+
+    .contact-page input,
+    .contact-page textarea {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+    }
+
+    .contact-page .btn-submit {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+    }
+
+    .contact-page .info-card h3 {
+        font-size: 1rem;
+    }
+
+    .contact-page .info-card p {
+        font-size: 0.9rem;
+    }
+
+    /* Ensure cards are full width on mobile portrait */
+    .contact-page .info-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-page .info-card {
+        width: 100%;
+    }
+}

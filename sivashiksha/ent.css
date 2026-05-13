@@ -1,0 +1,359 @@
+  .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            margin: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        h1 {
+            font-size: 3em;
+            background: linear-gradient(135deg, #D52927 0%, #FAC310 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-out;
+        }
+
+        .tagline {
+            font-size: 1.3em;
+            color: #555;
+            font-style: italic;
+            margin: 20px 0;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        .intro {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            margin: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            line-height: 1.8;
+            font-size: 1.1em;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 0.8s;
+        }
+
+        .intro p {
+            margin-bottom: 15px;
+        }
+
+        .mission-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            margin: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            line-height: 1.8;
+            font-size: 1.1em;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 1s;
+        }
+
+        .mission-section h3 {
+            color: #D52927;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .mission-section p {
+            margin-bottom: 15px;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 20px;
+        }
+
+        .pillar-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 0.8s ease-out forwards;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .pillar-card:nth-child(1) { animation-delay: 1.2s; }
+        .pillar-card:nth-child(2) { animation-delay: 1.4s; }
+        .pillar-card:nth-child(3) { animation-delay: 1.6s; }
+        .pillar-card:nth-child(4) { animation-delay: 1.8s; }
+
+        .pillar-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #D52927, #FAC310);
+            transition: left 0.4s ease;
+        }
+
+        .pillar-card:hover::before {
+            left: 0;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 60px rgba(213, 41, 39, 0.3);
+        }
+
+        .pillar-card h2 {
+            color: #D52927;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .pillar-icon {
+            font-size: 2.5em;
+            color: #FAC310;
+            margin-bottom: 15px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .pillar-card p {
+            line-height: 1.7;
+            color: #555;
+            font-size: 1.05em;
+        }
+
+        .conclusion {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            margin: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-size: 1.2em;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 2s;
+        }
+
+        .conclusion strong {
+            color: #D52927;
+            font-size: 1.1em;
+        }
+
+        .floating-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 70%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            top: 40%;
+            right: 20%;
+            animation-delay: 4s;
+        }
+        .nano-market {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    margin: 40px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    line-height: 1.8;
+    font-size: 1.1em;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 1.9s;
+}
+
+.nano-market h3 {
+    color: #D52927;
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 25px;
+    background: linear-gradient(135deg, #D52927 0%, #FAC310 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nano-market p {
+    margin-bottom: 25px;
+    color: #555;
+}
+
+.nano-features {
+    list-style: none;
+    padding-left: 0;
+}
+
+.nano-features li {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 500;
+}
+
+.nano-features li::before {
+    content: "•";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    font-size: 1.5em;
+    color: #FAC310;
+}
+@media (max-width: 768px) {
+    .nano-market {
+        padding: 25px;
+        margin: 20px;
+    }
+
+    .nano-market h3 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .nano-market p {
+        font-size: 1em;
+        line-height: 1.6;
+    }
+
+    .nano-features li {
+        font-size: 1em;
+        padding-left: 25px;
+        margin-bottom: 12px;
+    }
+
+    .nano-features li::before {
+        left: 5px;
+        font-size: 1.2em;
+    }
+}
+
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-50px) rotate(180deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro, .mission-section, .pillar-card, .conclusion {
+                padding: 25px;
+            }
+        }

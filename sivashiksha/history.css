@@ -1,0 +1,122 @@
+/* ============================= */
+/* History Page Styles (Scoped)  */
+/* ============================= */
+
+body {
+    font-family: 'Cabin', sans-serif;
+    overflow-x: hidden; /* prevent horizontal scroll */
+    margin: 0;
+    padding: 0;
+}
+
+/* --------------------------- */
+/* History Section Layout      */
+/* --------------------------- */
+.history-page .history-section {
+    min-height: 100vh; /* full height on desktop */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    margin-top:50px;
+}
+
+/* Background Colors */
+.history-page .bg-light {
+    background: #ffffff;
+    color: #222;
+}
+
+.history-page .bg-gray {
+    background: #f8f9fa;
+    color: #222;
+}
+
+/* Content Styling */
+.history-page .history-content {
+    max-width: 800px;
+    width: 100%;
+}
+
+.history-page h1,
+.history-page h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: #D52927; /* main red color */
+}
+
+.history-page p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* --------------------------- */
+/* Responsive Styles           */
+/* --------------------------- */
+
+/* Tablets ≤1024px */
+@media (max-width: 1024px) {
+    .history-page h1,
+    .history-page h2 {
+        font-size: 2.5rem;
+    }
+
+    .history-page p {
+        font-size: 1.1rem;
+    }
+
+    .history-page .history-content {
+        max-width: 90%;
+    }
+}
+
+/* Mobile Landscape ≤768px */
+@media (max-width: 768px) {
+    .history-page .history-section {
+        min-height: auto; /* fit content */
+        padding: 1.5rem;
+        align-items: flex-start; /* start from top */
+    }
+
+    .history-page h1,
+    .history-page h2 {
+        font-size: 2rem;
+    }
+
+    .history-page p {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile Portrait ≤480px */
+@media (max-width: 480px) {
+    .history-page .history-section {
+        min-height: auto;
+        padding: 1rem;
+        align-items: flex-start;
+    }
+
+    .history-page h1,
+    .history-page h2 {
+        font-size: 1.6rem;
+        margin-top: 20px;
+    }
+
+    .history-page p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Optional: Smooth Animations */
+[data-aos] {
+    opacity: 0;
+    transition: all 0.6s ease-out;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}

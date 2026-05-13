@@ -1,0 +1,510 @@
+/* ============================= */
+/* Support Page Styles (Scoped)  */
+/* ============================= */
+ body {
+            font-family: 'Cabin', sans-serif;
+            
+        }
+.support-page .support-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.support-page .bg-light {
+  background: #ffffff;
+  color: #222;
+}
+
+.support-page .bg-gray {
+  background: #f8f9fa;
+  color: #222;
+}
+
+.support-page .support-content {
+  max-width: 800px;
+}
+
+.support-page h1,
+.support-page h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #D52927;
+}
+
+.support-page p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+  .contribute-btn {
+    background-color: #D52927;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .contribute-btn:hover {
+    background-color: #b71f1e;
+    transform: translateY(-2px);
+  }
+
+  /* ----------- POPUP OVERLAY ----------- */
+  .form-popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+  }
+
+  /* ----------- FORM CONTAINER ----------- */
+  .form-container {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: slideDown 0.3s ease;
+  }
+
+  @keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  .form-container h2 {
+    color: #D52927;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .form-container label {
+    font-weight: 600;
+    color: #333;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .form-container input,
+  .form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+  }
+
+  .form-container input:focus,
+  .form-container textarea:focus {
+    border-color: #D52927;
+    outline: none;
+  }
+
+  .submit-btn {
+    background-color: #D52927;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+
+  .submit-btn:hover {
+    background-color: #b71f1e;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    font-size: 26px;
+    cursor: pointer;
+    color: #D52927;
+    transition: color 0.3s ease;
+  }
+
+  .close-btn:hover {
+    color: #b71f1e;
+  }
+
+  /* ----------- RESPONSIVE DESIGN ----------- */
+
+  /* Tablets */
+  @media (max-width: 768px) {
+    .form-container {
+      width: 90%;
+      padding: 25px;
+    }
+    .form-container h2 {
+      font-size: 1.3rem;
+    }
+    .submit-btn {
+      font-size: 15px;
+    }
+  }
+
+  /* Phones */
+  @media (max-width: 480px) {
+    .form-container {
+      width: 95%;
+      padding: 20px;
+      margin: 15% auto;
+    }
+    .form-container h2 {
+      font-size: 1.2rem;
+    }
+    .form-container input,
+    .form-container textarea {
+      font-size: 14px;
+    }
+    .submit-btn {
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+
+ .contribute-btn {
+    background-color: #D52927;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .contribute-btn:hover {
+    background-color: #b71f1e;
+    transform: translateY(-2px);
+  }
+
+  /* ----------- POPUP OVERLAY ----------- */
+  .form-popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+  }
+
+  /* ----------- FORM CONTAINER ----------- */
+  .form-container {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: slideDown 0.3s ease;
+  }
+
+  @keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  .form-container h2 {
+    color: #D52927;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .form-container label {
+    font-weight: 600;
+    color: #333;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .form-container input,
+  .form-container textarea,
+  .form-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+  }
+
+  .form-container input:focus,
+  .form-container textarea:focus,
+  .form-container select:focus {
+    border-color: #D52927;
+    outline: none;
+  }
+
+  .submit-btn {
+    background-color: #D52927;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+
+  .submit-btn:hover {
+    background-color: #b71f1e;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    font-size: 26px;
+    cursor: pointer;
+    color: #D52927;
+    transition: color 0.3s ease;
+  }
+
+  .close-btn:hover {
+    color: #b71f1e;
+  }
+
+  /* ----------- RESPONSIVE DESIGN ----------- */
+  @media (max-width: 768px) {
+    .form-container {
+      width: 90%;
+      padding: 25px;
+    }
+    .form-container h2 {
+      font-size: 1.3rem;
+    }
+    .submit-btn {
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .form-container {
+      width: 95%;
+      padding: 20px;
+      margin: 15% auto;
+    }
+    .form-container h2 {
+      font-size: 1.2rem;
+    }
+    .form-container input,
+    .form-container textarea,
+    .form-container select {
+      font-size: 14px;
+    }
+    .submit-btn {
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+  .contribute-btn {
+    background-color: #D52927;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .contribute-btn:hover {
+    background-color: #b71f1e;
+    transform: translateY(-2px);
+  }
+
+  /* ----------- POPUP OVERLAY ----------- */
+  .form-popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+  }
+
+  /* ----------- FORM CONTAINER ----------- */
+  .form-container {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: slideDown 0.3s ease;
+  }
+
+  @keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  .form-container h2 {
+    color: #D52927;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .form-container label {
+    font-weight: 600;
+    color: #333;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .form-container input,
+  .form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+  }
+
+  .form-container input:focus,
+  .form-container textarea:focus {
+    border-color: #D52927;
+    outline: none;
+  }
+
+  .submit-btn {
+    background-color: #D52927;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+
+  .submit-btn:hover {
+    background-color: #b71f1e;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    font-size: 26px;
+    cursor: pointer;
+    color: #D52927;
+    transition: color 0.3s ease;
+  }
+
+  .close-btn:hover {
+    color: #b71f1e;
+  }
+
+  /* ----------- RESPONSIVE DESIGN ----------- */
+  @media (max-width: 768px) {
+    .form-container {
+      width: 90%;
+      padding: 25px;
+    }
+    .form-container h2 {
+      font-size: 1.3rem;
+    }
+    .submit-btn {
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .form-container {
+      width: 95%;
+      padding: 20px;
+      margin: 15% auto;
+    }
+    .form-container h2 {
+      font-size: 1.2rem;
+    }
+    .form-container input,
+    .form-container textarea {
+      font-size: 14px;
+    }
+    .submit-btn {
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+@media (max-width: 1024px) {
+  .support-page h1,
+  .support-page h2 {
+    font-size: 2.5rem;
+  }
+
+  .support-page p {
+    font-size: 1.1rem;
+  }
+
+  .support-page .support-content {
+    max-width: 90%;
+  }
+}
+
+/* Mobile Landscape */
+@media (max-width: 768px) {
+  .support-page h1,
+  .support-page h2 {
+    font-size: 2rem;
+  }
+
+  .support-page p {
+    font-size: 1rem;
+  }
+
+  .support-page .support-section {
+    padding: 1.5rem;
+  }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+  .support-page h1,
+  .support-page h2 {
+    font-size: 1.6rem;
+  }
+
+  .support-page p {
+    font-size: 0.95rem;
+  }
+
+  .support-page .support-section {
+    padding: 1rem;
+  }
+}
