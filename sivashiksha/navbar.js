@@ -11,7 +11,7 @@
       <div id="scrollIndicator"></div>
       <div class="nav-container">
         <div class="logo">
-          <a href="/index.html"><img src="images/logo.png" alt="SIVA Logo" /></a>
+          <a href="/index.html"><img src="/images/logo.png" alt="SIVA Logo" /></a>
         </div>
         <ul class="nav-links" id="navLinks">
           <li><a href="/about.html">About Us</a></li>
