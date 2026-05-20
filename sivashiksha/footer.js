@@ -14,7 +14,7 @@
 
           <!-- Section 1 -->
           <div class="footer-section about">
-            <img src="images/logo.png" alt="SIVA Logo" class="footer-logo" />
+            <img src="/images/logo.png" alt="SIVA Logo" class="footer-logo" />
             <p>Empowering Communities</p>
           </div>
 
