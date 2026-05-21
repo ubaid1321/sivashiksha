@@ -63,97 +63,225 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       rel="stylesheet"
     />
    <style>
-.article-container {
-  max-width: 1100px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: "Cabin", sans-serif;
-  box-sizing: border-box;
-  overflow-x: hidden;
+/* ============================= */
+/* ARTICLE CONTAINER */
+/* ============================= */
+
+.article-container{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+font-family:Arial, Helvetica, sans-serif;
+line-height:1.7;
+color:#222;
 }
 
-.article-hero {
-  width: 100%;
-  max-width: 100%;
-  height: 600px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 25px;
-  margin-top: 50px;
-  display: block;
+/* ============================= */
+/* HERO IMAGE */
+/* ============================= */
+
+.article-hero{
+width:100%;
+height:auto;
+border-radius:10px;
+margin-bottom:30px;
+object-fit:cover;
 }
 
-.article-title {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #D52927;
-  margin-bottom: 20px;
-  line-height: 1.3;
-  word-wrap: break-word;
+/* ============================= */
+/* TITLE */
+/* ============================= */
+
+.article-title{
+font-size:2.3rem;
+font-weight:700;
+margin-bottom:20px;
+line-height:1.2;
 }
 
-.article-body {
-  font-size: 1.15rem;
-  line-height: 1.75;
-  color: #333;
-  word-wrap: break-word;
+/* ============================= */
+/* ARTICLE BODY */
+/* ============================= */
+
+.article-body p{
+font-size:1.05rem;
+margin-bottom:18px;
+color:#333;
 }
 
-.article-body p {
-  margin-bottom: 18px;
+.article-body h2{
+margin-top:35px;
+margin-bottom:10px;
+font-size:1.55rem;
+font-weight:700;
+color:#111;
 }
 
-.article-body h2 {
-  font-size: 1.5rem;
-  margin-top: 30px;
-  margin-bottom: 15px;
-  font-weight: 700;
-  color: #444;
+/* ============================= */
+/* INSIGHTS SECTION */
+/* ============================= */
+
+.insights-section{
+margin-top:50px;
 }
 
-@media (max-width: 900px) {
-  .article-title {
-    font-size: 2rem;
-  }
+.insights-section h2{
+font-size:1.7rem;
+margin-bottom:20px;
 }
 
-@media (max-width: 768px) {
-  .article-hero {
-    height: 260px;
-  }
+/* TABLE */
 
-  .article-title {
-    font-size: 1.8rem;
-  }
-
-  .article-body {
-    font-size: 1.05rem;
-  }
+.insights-table{
+width:100%;
+border-collapse:collapse;
+font-size:0.98rem;
 }
 
-@media (max-width: 480px) {
-  .article-container {
-    padding: 15px;
-  }
+.insights-table th,
+.insights-table td{
+border:1px solid #e5e5e5;
+padding:14px;
+text-align:left;
+vertical-align:top;
+}
 
-  .article-hero {
-    height: 220px;
-    border-radius: 10px;
-  }
+.insights-table th{
+background:#f7f7f7;
+font-weight:600;
+}
 
-  .article-title {
-    font-size: 1.55rem;
-    text-align: center;
-  }
+/* alternate rows */
 
-  .article-body h2 {
-    font-size: 1.3rem;
-  }
+.insights-table tr:nth-child(even){
+background:#fafafa;
+}
 
-  .article-body {
-    font-size: 1rem;
-  }
+/* ============================= */
+/* FAQ SECTION */
+/* ============================= */
+
+.faq-section{
+margin-top:60px;
+}
+
+.faq-section h2{
+font-size:1.7rem;
+margin-bottom:20px;
+}
+
+/* FAQ ITEM */
+
+.faq-item{
+border-bottom:1px solid #e6e6e6;
+margin-bottom:8px;
+}
+
+/* QUESTION BUTTON */
+
+.faq-question{
+width:100%;
+background:none;
+border:none;
+text-align:left;
+font-size:1.05rem;
+padding:16px 0;
+cursor:pointer;
+font-weight:600;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+/* hover effect */
+
+.faq-question:hover{
+color:#D52927;
+}
+
+/* ANSWER */
+
+.faq-answer{
+display:none;
+padding-bottom:15px;
+}
+
+.faq-answer p{
+margin:0;
+font-size:0.98rem;
+color:#444;
+}
+
+/* ============================= */
+/* REFLECTION SECTION */
+/* ============================= */
+
+.reflection-section{
+margin-top:60px;
+padding:25px;
+background:#f9f9f9;
+border-radius:8px;
+}
+
+.reflection-section h2{
+margin-bottom:15px;
+font-size:1.5rem;
+}
+
+.reflection-section ul{
+padding-left:20px;
+}
+
+.reflection-section li{
+margin-bottom:12px;
+font-size:1.03rem;
+color:#333;
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+/* tablets */
+
+@media (max-width:1024px){
+
+.article-title{
+font-size:2rem;
+}
+
+.article-body p{
+font-size:1rem;
+}
+
+.insights-table th,
+.insights-table td{
+padding:12px;
+}
+
+}
+
+/* phones */
+
+@media (max-width:600px){
+
+.article-container{
+padding:25px 15px;
+}
+
+.article-title{
+font-size:1.6rem;
+}
+
+.article-body p{
+font-size:0.97rem;
+line-height:1.6;
+}
+
+.insights-table{
+font-size:0.9rem;
+}
+
 }
 
 </style>
