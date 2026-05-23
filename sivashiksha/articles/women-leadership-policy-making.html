@@ -674,16 +674,51 @@ this.textContent = this.textContent.replace("+","−");
       // Handle active link highlighting
       document.querySelectorAll(".nav-links a").forEach((link) => {
         link.addEventListener("click", () => {
-          // Remove active class from all links
+         
           document
             .querySelectorAll(".nav-links a")
             .forEach((l) => l.classList.remove("active"));
 
-          // Add active class to clicked link
+         
           link.classList.add("active");
-          // ✅ No preventDefault, so navigation works
+          
         });
       });
     </script>
+     <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+const questions = document.querySelectorAll(".faq-question");
+
+questions.forEach(question => {
+
+question.addEventListener("click", function () {
+
+const answer = this.nextElementSibling;
+
+/* close other open answers */
+
+document.querySelectorAll(".faq-answer").forEach(item => {
+if(item !== answer){
+item.style.display = "none";
+}
+});
+
+/* toggle current answer */
+
+if(answer.style.display === "block"){
+answer.style.display = "none";
+this.textContent = this.textContent.replace("−","+");
+}else{
+answer.style.display = "block";
+this.textContent = this.textContent.replace("+","−");
+}
+
+});
+
+});
+
+});
+</script>
   </body>
 </html>

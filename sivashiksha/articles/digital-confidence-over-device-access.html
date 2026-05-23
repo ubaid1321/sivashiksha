@@ -562,5 +562,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         });
       });
     </script>
+     <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+const questions = document.querySelectorAll(".faq-question");
+
+questions.forEach(question => {
+
+question.addEventListener("click", function () {
+
+const answer = this.nextElementSibling;
+
+/* close other open answers */
+
+document.querySelectorAll(".faq-answer").forEach(item => {
+if(item !== answer){
+item.style.display = "none";
+}
+});
+
+/* toggle current answer */
+
+if(answer.style.display === "block"){
+answer.style.display = "none";
+this.textContent = this.textContent.replace("−","+");
+}else{
+answer.style.display = "block";
+this.textContent = this.textContent.replace("+","−");
+}
+
+});
+
+});
+
+});
+</script>
   </body>
 </html>
