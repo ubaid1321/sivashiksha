@@ -409,5 +409,17 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://sivashiksha.com/articles/how-educated-mothers-transform-communities.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sivashiksha.com/blogs/educated-mothers-shape-stronger-communities.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 
 </urlset>
