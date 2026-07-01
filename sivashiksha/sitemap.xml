@@ -421,5 +421,29 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://sivashiksha.com/articles/rethinking-impact-social-development.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sivashiksha.com/blogs/opportunity-to-empowerment-social-progress.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sivashiksha.com/articles/future-of-empowerment-from-charity-to-capability.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sivashiksha.com/blogs/empowerment-through-participation-and-capability.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 
 </urlset>
