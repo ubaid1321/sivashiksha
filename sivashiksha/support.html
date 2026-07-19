@@ -101,7 +101,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="close-btn" id="closeForm">&times;</span>
     <h2>Please fill this form and we will get back to you</h2>
 
-   <form id="individualForm" data-endpoint="send_individual_form.php">
+   <form id="individualForm">
   <label for="name">Name</label>
   <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
@@ -116,6 +116,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <label for="remarks">Remarks</label>
   <textarea id="remarks" name="remarks" placeholder="Enter your message" rows="4"></textarea>
+
+  <!-- Honeypot: hidden from humans, bots fill it in and get rejected -->
+  <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"
+         style="display:none !important;" aria-hidden="true">
 
   <button type="submit" class="submit-btn">Submit</button>
 
@@ -147,7 +151,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="close-btn" id="closeCorpForm">&times;</span>
     <h2>Please fill this form and we will get back to you</h2>
 
-   <form id="corporationForm" data-endpoint="send_corporation_form.php">
+   <form id="corporationForm">
   <label for="name">Name</label>
   <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
@@ -173,6 +177,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <label for="remarks">Remarks</label>
   <textarea id="remarks" name="remarks" placeholder="Enter your message" rows="4"></textarea>
+
+  <!-- Honeypot: hidden from humans, bots fill it in and get rejected -->
+  <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"
+         style="display:none !important;" aria-hidden="true">
 
   <button type="submit" class="submit-btn">Submit</button>
 
@@ -203,7 +211,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="close-btn" id="closeNgoForm">&times;</span>
     <h2>Please fill this form and we will get back to you</h2>
 
-    <form id="ngoForm" data-endpoint="send_ngo_form.php">
+    <form id="ngoForm">
   <label for="name">Name</label>
   <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
@@ -221,6 +229,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <label for="remarks">Remarks</label>
   <textarea id="remarks" name="remarks" placeholder="Enter your message" rows="4"></textarea>
+
+  <!-- Honeypot: hidden from humans, bots fill it in and get rejected -->
+  <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"
+         style="display:none !important;" aria-hidden="true">
 
   <button type="submit" class="submit-btn">Submit</button>
 
@@ -241,44 +253,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="navbar.js"></script>
 <script>
 
-const scriptURL = "https://script.google.com/macros/s/AKfycbza6ZKF-y46JMhCytGOLTPfCLP6KWfLgijeywFt_z9yKrbq4v_9jLJOfSXqLwRuYMi7/exec";
+/* Web3Forms: public access key (safe to expose in HTML) */
+const WEB3FORMS_KEY = "5545eaa2-4f99-4d8d-b013-957c3d7213c3";
 
 function connectForm(formId, messageId, formType){
 
   const form = document.getElementById(formId);
   const messageBox = document.getElementById(messageId);
 
-  if(!form) return;
+  if(!form || !messageBox) return;
 
-  form.addEventListener("submit", function(e){
+  form.addEventListener("submit", async function(e){
 
     e.preventDefault();
 
+    const submitBtn = form.querySelector("button[type='submit']");
+
+    messageBox.style.color = "#555";
     messageBox.innerHTML = "Submitting...";
+    if (submitBtn) submitBtn.disabled = true;
 
+    /* Send the form fields, plus the Web3Forms routing fields */
     const formData = new FormData(form);
+    formData.append("access_key", WEB3FORMS_KEY);
+    formData.append("subject", "New " + formType + " Form Submission - Siva Shiksha");
+    formData.append("from_name", "Siva Shiksha Website");
+    formData.append("formType", formType);
 
-    const data = {
-      formType: formType,
-      name: formData.get("name"),
-      company: formData.get("company") || formData.get("companyName"),
-      type: formData.get("companyType"),
-      address: formData.get("address"),
-      website: formData.get("website"),
-      email: formData.get("email"),
-      phone: formData.get("phone"),
-      message: formData.get("message"),
-      remarks: formData.get("remarks")
-    };
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: formData
+      });
 
-    fetch(scriptURL,{
-      method:"POST",
-      mode:"no-cors",
-      body: JSON.stringify(data)
-    });
+      const result = await response.json();
 
-    messageBox.innerHTML = "Submitted successfully!";
-    form.reset();
+      /* Only report success if the server actually confirms it */
+      if (response.ok && result.success) {
+        messageBox.style.color = "green";
+        messageBox.innerHTML = "Thank you! Your form has been submitted successfully.";
+        form.reset();
+      } else {
+        messageBox.style.color = "red";
+        messageBox.innerHTML = result.message || "Submission failed. Please email info@sivashiksha.com.";
+      }
+    } catch (error) {
+      messageBox.style.color = "red";
+      messageBox.innerHTML = "Could not connect. Please check your connection or email info@sivashiksha.com.";
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+    }
 
   });
 
